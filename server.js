@@ -1,13 +1,17 @@
-const express = require('express')
-const app = express()
-const expressLayouts = require('express-ejs-layouts')
-const mongoose = require('mongoose')
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
+const express = require('express')
+const app = express()
+const expressLayouts = require('express-ejs-layouts')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
+
 //import routes 
 const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
 
 
 //configure our View Engine
@@ -23,6 +27,7 @@ app.use(expressLayouts)
 //public files --> css, images
 app.use(express.static('public'))
 
+app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 
 mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Connected to DB!...........'));
 const db = mongoose.connection
@@ -30,6 +35,7 @@ db.on('error', error => console.error(error))
 
 
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
 
 
 
