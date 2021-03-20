@@ -1,6 +1,8 @@
+<h2>Recently Added</h2>
 
-Server Up & Running on port 3000
-Middle
-Server Up & Running on port 3000
-3000
-Server Up & Running on port 3000
+
+<div>
+    <% books.forEach( book => { %>
+        <img height="150" width="100" src="<%= book.coverImagePath %>" >
+    <% }) %>
+</div>

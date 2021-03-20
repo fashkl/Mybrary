@@ -8,11 +8,17 @@ const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+const logger = require('morgan')
+const cors = require('cors')
 
 //import routes 
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
+
+app.use(logger('dev'))
+app.use(cors())
 
 //configure our View Engine
 app.set('view engine', 'ejs')
@@ -36,6 +42,7 @@ db.on('error', error => console.error(error))
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 
 
