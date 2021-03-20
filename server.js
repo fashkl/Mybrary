@@ -7,6 +7,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const path = require('path')
 
 const logger = require('morgan')
 const cors = require('cors')
