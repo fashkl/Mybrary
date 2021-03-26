@@ -7,7 +7,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const path = require('path')
+const methodOverride = require('method-override')
 
 const logger = require('morgan')
 const cors = require('cors')
@@ -31,10 +31,13 @@ app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 
+//Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it
+app.use(methodOverride('_method'))
+
 //public files --> css, images
 app.use(express.static('public'))
 
-app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
 mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Connected to DB!...........'));
 const db = mongoose.connection
