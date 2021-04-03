@@ -8,13 +8,13 @@ With this tool you can do the following
 - Filter for specific book by name & publish date
 
 **Tech Stack** 
--Nodejs
--MongoDB
+- Nodejs
+- MongoDB
 **Packages**
--Express
--Mongoose
--ejs
--express-ejs-layouts
+- Express
+- Mongoose
+- ejs
+- express-ejs-layouts
 
 ### Tutorial playlist
 ***https://www.youtube.com/playlist?list=PLZlA0Gpn_vH8jbFkBjOuFjhxANC63OmXM***
