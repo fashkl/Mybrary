@@ -17,7 +17,7 @@ With this tool you can do the following
 -express-ejs-layouts
 
 ### Tutorial playlist
-*** https://www.youtube.com/playlist?list=PLZlA0Gpn_vH8jbFkBjOuFjhxANC63OmXM ***
+***https://www.youtube.com/playlist?list=PLZlA0Gpn_vH8jbFkBjOuFjhxANC63OmXM***
 
 ### Demo
- *** https://mylibrary-web-dev-app.herokuapp.com/ ***
+ ***https://mylibrary-web-dev-app.herokuapp.com/***
